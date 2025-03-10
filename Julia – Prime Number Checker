@@ -1,0 +1,19 @@
+function is_prime(n::Int)
+    if n <= 1
+        return false
+    end
+    for i in 2:sqrt(n)
+        if n % i == 0
+            return false
+        end
+    end
+    return true
+end
+
+println("Enter a number:")
+num = parse(Int, readline())
+if is_prime(num)
+    println("$num is a prime number.")
+else
+    println("$num is not a prime number.")
+end
